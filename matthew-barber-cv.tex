@@ -1,0 +1,171 @@
+% !TeX program = xelatex
+\title{Matthew Barber}
+\author{}
+\date{}
+
+\documentclass[11pt]{article}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{graphicx}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={120mm,257mm},
+	left=20mm,
+	top=20mm,
+	% 50mm to play
+	marginparsep=10mm,
+	marginparwidth=50mm % overflow
+}
+
+\setlength{\parindent}{0in}
+
+\usepackage{color}
+\usepackage{xcolor}
+
+% Material Design colors:
+\colorlet{primary}{black!87!white}   % - high emphasis
+\colorlet{secondary}{black!60!white} % - med emphasis
+\colorlet{tertiary}{black!38!white}  % - disabled
+
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{fontspec}
+
+\setmonofont{Roboto Mono}
+\newfontfamily\titlefont[Color=primary, Scale=4]{Merriweather}
+\setmainfont{Roboto}
+\newfontfamily\sectionfont[Color=primary]{Roboto Condensed}
+\newfontfamily\subsectionfont[Color=primary]{Roboto Slab}
+\titleformat*{\section}{\LARGE\sectionfont}
+\titleformat*{\subsection}{\large\subsectionfont}
+\newcommand{\fakesubsection}[1]{\large{\subsectionfont{#1}}}
+\titlespacing*{\section}{0pt}{6pt}{0pt}
+\titlespacing*{\subsection}{0pt}{3pt}{0pt}
+
+\newcommand{\tech}[1]{#1}
+
+\newfontfamily{\annfont}[Color=secondary]{Roboto}
+\newfontfamily\marginemph[Color=secondary]{Roboto Condensed}
+\newcommand{\annotate}[1]{
+	\marginpar{\small{\annfont#1}}
+}
+
+\newcommand{\icon}[1]{
+	\raisebox{-3pt}{\def\svgwidth{12pt}\input{#1.pdf_tex}}
+}
+
+\usepackage{enumitem}
+\newcommand{\listskills}[2]{
+	\textbf{\marginemph #1}
+	\begin{description}[topsep=0pt, noitemsep, labelsep=0pt]
+	#2
+	\end{description}
+}
+
+\usepackage{tabularx}
+
+\usepackage{fontawesome}
+
+\begin{document}
+\thispagestyle{empty} % removes page number
+\color{primary}
+
+{\titlefont Matthew Barber}
+
+\begin{tabular}{ @{} l l r @{} }
+	\faGlobe \space Essex, UK & \item \faPhone \space 07951 415676 & \item \faEnvelope \space \href{mailto:quitesimplymatt@gmail.com}{quitesimplymatt@gmail.com}
+\end{tabular}
+
+\section*{PROFILE}
+
+\annotate{
+	\textbf{\marginemph FIND ME ONLINE}
+	\begin{description}[labelsep=1pt]
+		\item \icon{github} \href{https://github.com/Honno/}{github.com/Honno}
+		\item \icon{pypi} \href{https://pypi.org/user/Honno/}{pypi.org/user/Honno}
+		\item \icon{kaggle} \href{https://www.kaggle.com/justhonno}{kaggle.com/justhonno}
+		\item \icon{site} \href{https://matthewbarber.io/}{matthewbarber.io}
+	\end{description}
+}
+
+I'm a BSc Computer Science graduate experienced in using \tech{Python} for data mining applications. I can efficiently explore, preprocess and model for data to identify the underlying patterns which lead to useful insights. I am able to engineer my own applications to achieve bespoke tasks, from quick scripts to fully-fledged CLIs. I can work efficiently alone, being a disciplined and resourceful individual, always eager to improve my craft. With my employment and volunteering experiences necessitating cohesive teamwork, I enjoy working with and learning from my peers, and can communicate my own ideas succinctly.
+
+\section*{PROJECTS}
+
+\annotate{
+	\listskills{LANGUAGES}{
+		\item Python
+		\item SQL
+		\item Lisp
+		\item C
+		\item JavaScript
+		\item Bash
+		\item Java
+	}
+	
+	\medskip
+	
+	\listskills{PACKAGES}{
+		\item pandas
+		\item NumPy
+		\item SciPy
+		\item scikit-learn
+		\item Matplotlib
+		\item Altair
+		\item pytest
+		\item Hypothesis
+		\item PySpark
+		\item Redis
+		\item Jinja
+		\item Click
+	}
+	
+	\medskip
+	
+	\listskills{TOOLS}{
+		\item Git
+		\item Jupyter
+		\item Weka
+		\item Docker
+		\item pre-commit
+		\item GitHub Actions
+		\item TravisCI
+		\item AppVeyor
+	}
+}
+
+\subsection*{\href{https://github.com/Honno/coinflip/}{coinflip}}
+
+\tech{Python} library for assuring cryptographic randomness in RNGs. The implemented statistical tests use \tech{pandas} under the hood. A testing suite featuring \tech{pytest} and \tech{Hypothesis} ensures reliable results.
+
+\subsection*{\href{https://github.com/Honno/epitope-classification}{Linear B-cell Epitope Classification}}
+
+Essay on exploring, preprocessing and modelling for a dirty proteins dataset. I identified subtle duplication patterns in the data, resolved via a bespoke \tech{Python} script. \tech{Weka} was used to create Nearest Neighbour, Random Forests, Bayesian and Logistic Regression classifiers, both for equal and uneven cost scenarios, to find the most appropriate model.
+
+\subsection*{\href{https://github.com/Joshgallagher/financial-analysis-stack}{Financial Analysis Stack}}
+
+Creating regression models for stock market histories in \tech{Python}. Demonstrates how to build applications with distributed data via a \tech{Hive} on \tech{HDFS}, and how to utilise parallel processing with \tech{PySpark}. All services are initialised as \tech{Docker} containers.
+
+\subsection*{\href{https://github.com/Honno/events-site}{University Events Site}}
+
+\tech{NodeJS} site for students to manage university events. API and front-end routing was created in \tech{Express}, interacting with a \tech{MongoDB} data store.
+
+\subsection*{\href{https://matthewbarber.io/gzip-quine/}{Recursive GZIP Bomb Tutorial}}
+
+Comprehensive primer on the file format and compression algorithm theory involved in creating compressed file quines (i.e. extracts to an exact copy of itself, ad infinitum). Self-referential checksum was brute-forced by a multiprocessing \tech{Python} script. My file is used to smoke test Apache's Tika project, and exposed a MacOS vulnerability.
+
+\section*{EXPERIENCE}
+
+\fakesubsection{Ferndale Homeless Shelter} \hfill \textit{Nov 2015—Apr 2019}\\
+\fakesubsection{Starbucks} \hfill  \textit{Sep 2018—Feb 2019}\\
+\fakesubsection{OTS Homeless Shelter} \hfill \textit{Sep 2018—Feb 2019}\\
+\fakesubsection{Adventure Island Theme Park} \hfill \textit{Jul 2017—Sep 2018}
+
+\section*{EDUCATION}
+
+1st (Honours) BSc Computer Science, Aston University
+
+\end{document}
