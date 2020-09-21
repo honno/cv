@@ -5,6 +5,12 @@
 
 \documentclass[11pt]{article}
 
+% prevent hyphen breaks
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
 \usepackage[hidelinks]{hyperref}
 
 \usepackage{graphicx}
@@ -35,7 +41,7 @@
 \usepackage{fontspec}
 
 \setmonofont{Roboto Mono}
-\newfontfamily\titlefont[Color=primary, Scale=4]{Merriweather}
+\newfontfamily\titlefont[Color=primary, Scale=3.75]{Merriweather}
 \setmainfont{Roboto}
 \newfontfamily\sectionfont[Color=primary]{Roboto Condensed}
 \newfontfamily\sectionfontlite[Color=primary]{Roboto Condensed-Light}
@@ -92,7 +98,7 @@
 	\end{description}
 }
 
-I'm a BSc Computer Science graduate experienced in using \tech{Python} for data mining applications. I can efficiently explore, preprocess and model for data to identify the underlying patterns which lead to useful insights. I am able to engineer my own applications to achieve bespoke tasks, from quick scripts to fully-fledged CLIs. I can work efficiently alone, being a disciplined and resourceful individual, always eager to improve my craft. With my employment and volunteering experiences necessitating cohesive teamwork, I enjoy working with and learning from my peers, and can communicate my own ideas succinctly.
+I'm a BSc Computer Science graduate experienced in using \tech{Python} for data mining applications. I can efficiently explore, preprocess and model for data to identify the underlying patterns which lead to useful insights. I am able to engineer my own applications to accomplish bespoke tasks, from quick scripts to fully-fledged CLIs. I can work efficiently alone, being a disciplined and resourceful individual, always eager to improve my craft. With my employment and volunteering experiences necessitating cohesive teamwork, I enjoy working with and learning from my peers and can communicate my own ideas succinctly.
 
 \section*{PROJECTS}
 
@@ -144,7 +150,7 @@ I'm a BSc Computer Science graduate experienced in using \tech{Python} for data 
 
 \subsection*{\href{https://github.com/Honno/epitope-classification}{Linear B-cell Epitope Classification}}
 
-Essay on exploring, preprocessing and modelling for a dirty proteins dataset. I identified subtle duplication patterns in the data, resolved via a bespoke \tech{Python} script. \tech{Weka} was used to create Nearest Neighbour, Random Forests, Bayesian and Logistic Regression classifiers, both for equal and uneven cost scenarios, to find the most appropriate model.
+Essay on exploring, preprocessing and modelling for a dirty proteins dataset. I identified subtle duplication patterns in the data, resolved via a bespoke \tech{Python} script. \tech{Weka} was used to create Nearest Neighbour, Random Forests, Bayesian and Logistic Regression classifiers to find the most appropriate model for both equal and uneven cost scenarios.
 
 \subsection*{\href{https://github.com/Joshgallagher/financial-analysis-stack}{Financial Analysis Stack}}
 
@@ -152,7 +158,7 @@ Creating regression models for stock market histories in \tech{Python}. Demonstr
 
 \subsection*{\href{https://github.com/Honno/events-site}{University Events Site}}
 
-\tech{NodeJS} site for students to manage university events. API and front-end routing was created in \tech{Express}, interacting with a \tech{MongoDB} data store.
+\tech{Node.js} site for students to manage university events. API and front-end routing was created in \tech{Express}, interacting with a \tech{MongoDB} data store.
 
 \subsection*{\href{https://matthewbarber.io/gzip-quine/}{Recursive GZIP Bomb Tutorial}}
 
