@@ -34,12 +34,16 @@
 \usepackage{titling}
 \usepackage{fontspec}
 
+\DeclareRobustCommand{\ltseries}{\fontseries{lt}\selectfont}
+\DeclareTextFontCommand{\textsi}{\sishape}
+
 \setmonofont{Roboto Mono}
 \newfontfamily\titlefont[Color=primary, Scale=4]{Merriweather}
 \setmainfont{Roboto}
 \newfontfamily\sectionfont[Color=primary]{Roboto Condensed}
+\newfontfamily\sectionfontlite[Color=primary]{Roboto Condensed-Light}
 \newfontfamily\subsectionfont[Color=primary]{Roboto Slab}
-\titleformat*{\section}{\LARGE\sectionfont}
+\titleformat*{\section}{\LARGE\sectionfontlite}
 \titleformat*{\subsection}{\large\subsectionfont}
 \newcommand{\fakesubsection}[1]{\large{\subsectionfont{#1}}}
 \titlespacing*{\section}{0pt}{6pt}{0pt}
@@ -147,7 +151,7 @@ Essay on exploring, preprocessing and modelling for a dirty proteins dataset. I 
 
 \subsection*{\href{https://github.com/Joshgallagher/financial-analysis-stack}{Financial Analysis Stack}}
 
-Creating regression models for stock market histories in \tech{Python}. Demonstrates how to build applications with distributed data via a \tech{Hive} on \tech{HDFS}, and how to utilise parallel processing with \tech{PySpark}. All services are initialised as \tech{Docker} containers.
+Creating regression models for stock market histories in \tech{Python}. Demonstrates how to build applications with distributed data via \tech{Hive} on \tech{HDFS}, and how to utilise parallel processing with \tech{PySpark}. All services are initialised as \tech{Docker} containers.
 
 \subsection*{\href{https://github.com/Honno/events-site}{University Events Site}}
 
