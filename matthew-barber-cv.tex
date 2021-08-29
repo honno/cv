@@ -52,8 +52,6 @@
 \titlespacing*{\section}{0pt}{6pt}{0pt}
 \titlespacing*{\subsection}{0pt}{3pt}{0pt}
 
-\newcommand{\tech}[1]{#1}
-
 \newfontfamily{\annfont}[Color=secondary]{Roboto}
 \newfontfamily\marginemph[Color=secondary]{Roboto Condensed}
 \newcommand{\annotate}[1]{
@@ -83,7 +81,9 @@
 {\titlefont Matthew Barber}
 
 \begin{tabularx}{\textwidth}{ @{} l c r @{} }
-	\faGlobe{} Essex, UK & \faEnvelope{} \href{mailto:quitesimplymatt@gmail.com}{quitesimplymatt@gmail.com}
+	\faGlobe{} Essex, UK &
+	%\faPhone{} 07951 415676 & 
+	\faEnvelope{} \href{mailto:quitesimplymatt@gmail.com}{quitesimplymatt@gmail.com}
 \end{tabularx}
 
 \section*{PROFILE}
@@ -91,48 +91,45 @@
 \annotate{
 	\textbf{\marginemph FIND ME ONLINE}
 	\begin{description}[labelsep=1pt]
-		\item \icon{github} \href{https://github.com/Honno/}{github.com/Honno}
-		\item \icon{pypi} \href{https://pypi.org/user/Honno/}{pypi.org/user/Honno}
+		\item \icon{github} \href{https://github.com/honno/}{github.com/honno}
+		\item \icon{pypi} \href{https://pypi.org/user/honno/}{pypi.org/user/honno}
 		\item \icon{kaggle} \href{https://www.kaggle.com/justhonno}{kaggle.com/justhonno}
 		\item \icon{site} \href{https://matthewbarber.io/}{matthewbarber.io}
 		\item \icon{jekyll} \href{https://blog.matthewbarber.io/}{blog.matthewbarber.io}
+		\item \icon{linkedin} \href{https://www.linkedin.com/in/honno/}{linkedin.com/in/honno}
 	\end{description}
 }
 
-I'm a BSc Computer Science graduate experienced in using \tech{Python} for data mining applications. I can efficiently explore, preprocess and model for data to identify the underlying patterns which lead to useful insights. I am able to engineer my own applications to accomplish bespoke tasks, from quick scripts to fully-fledged CLIs. I can work efficiently alone, being a disciplined and resourceful individual, always eager to improve my craft. With my employment and volunteering experiences necessitating cohesive teamwork, I enjoy working with and learning from my peers, and can communicate my own ideas succinctly.
+I'm a BSc Computer Science graduate experienced in using Python for data mining applications. I can efficiently explore, preprocess and model for data to identify the underlying patterns which lead to useful insights. I can develop quick scripts and notebooks to fully-fledged CLIs and websites. I can work efficiently alone, being a disciplined and resourceful individual, always eager to improve my craft. With my employment and volunteering experiences necessitating cohesive teamwork, I enjoy working with and learning from my peers, and can communicate my own ideas succinctly.
 
-\section*{PROJECTS}
+\section*{EXPERIENCE}
 
 \annotate{
 	\listskills{LANGUAGES}{
 		\item Python
+		\item C
 		\item SQL
-		\item Lisp
 		\item JavaScript
 		\item Bash
-		\item Java
+		\item Lisp
 	}
 	
 	\medskip
-	
+
 	\listskills{PACKAGES}{
 		\item pandas
 		\item NumPy
 		\item SciPy
-		\item scikit-learn
-		\item Matplotlib
-		\item Altair
 		\item pytest
-		\item tox
 		\item Hypothesis
-		\item PySpark
-		\item Redis
-		\item Jinja
+		\item Sphinx
+		\item Matplotlib		
+		\item Altair
+		\item Rich
 		\item Click
+		\item Requests
 		\item Flask
-		\item pewee
-		\item PyMongo
-		\item requests
+		\item Django
 		\item Beautiful Soup
 		\item pywb
 	}
@@ -142,44 +139,48 @@ I'm a BSc Computer Science graduate experienced in using \tech{Python} for data 
 	\listskills{TOOLS}{
 		\item Git
 		\item Jupyter
-		\item Weka
-		\item Docker
 		\item pre-commit
 		\item GitHub Actions
-		\item TravisCI
-		\item AppVeyor
+		\item Docker
 	}
 }
 
-\subsection*{\href{https://github.com/Honno/coinflip/}{coinflip}}
 
-\tech{Python} library for assuring cryptographic randomness in RNGs. The implemented statistical tests use \tech{pandas} under the hood. A testing suite featuring \tech{pytest} and \tech{Hypothesis} ensures reliable results.
+\fakesubsection{\href{https://www.quansight.com/}{Quansight OSS Intern}} \hfill {\small\textit{July—Sep. 2021}}
 
-\subsection*{\href{https://github.com/Honno/epitope-classification}{Linear B-cell Epitope Classification}}
+Creating tools for developers and users of Python array libraries such as NumPy to test their adoption of the upcoming Array API standard. Involves using property-based techniques to find non-obvious bugs, where my work is now being merged into the popular Hypothesis library for first-party support and will be used by the official Array API compliance suite.
 
-Essay on exploring, preprocessing and modelling for a dirty proteins dataset. Subtle duplication patterns  were identified, resolved via a bespoke \tech{Python} script. \tech{Weka} was used to create Nearest Neighbour, Random Forests, Bayesian and Logistic Regression classifiers to find the most appropriate model for both equal and uneven cost scenarios.
+%\fakesubsection{Ferndale Homeless Shelter Volunteer} \hfill {\small\textit{Nov. 2015—April 2019}}\\
+%\fakesubsection{Starbucks Barista} \hfill  {\small\textit{Sep. 2018—Feb. 2019}}\\
+%\fakesubsection{OTS Homeless Shelter Volunteer} {\small\hfill \textit{Sep. 2018—Feb. 2019}}\\
+%\fakesubsection{Adventure Island Theme Park Host} {\small\hfill \textit{July 2017—Sep. 2018}}
 
-\subsection*{\href{https://github.com/Joshgallagher/financial-analysis-stack}{Financial Analysis Stack}}
+\section*{PROJECTS}
 
-Creating regression models for stock market histories in \tech{Python}. Demonstrates how to build applications with distributed data via \tech{Hive} on \tech{HDFS}, and how to utilise parallel processing with \tech{PySpark}. All services are initialised as \tech{Docker} containers.
+\subsection*{\href{https://github.com/honno/coinflip/}{coinflip}}
 
-\subsection*{\href{https://www.yygarchive.org/}{YoYo Games Sandbox Archive}}
+Python library for assuring cryptographic randomness in RNGs. The implemented statistical tests use pandas under the hood. A testing suite featuring pytest and Hypothesis ensures reliable results.
 
-\tech{Flask} site to search for games of a shutdown games portal. Games were procured from an existing \tech{WARC} collection, replayed with \tech{pywb} to subsequently be scraped using \tech{requests} and \tech{Beautiful Soup}.
+\subsection*{\href{https://github.com/honno/epitope-classification}{Linear B-cell Epitope Classification}}
+
+Essay on exploring, preprocessing and modelling for a dirty proteins dataset. Subtle duplication patterns  were identified, resolved via a bespoke Python script. Weka was used to create various classifiers to find the most appropriate model for both equal and uneven cost scenarios.
+
+%\subsection*{\href{https://github.com/Joshgallagher/financial-analysis-stack}{Financial Analysis Stack}}
+%
+%Creating regression models for stock market histories in Python. Demonstrates how to build applications with distributed data via Hive on HDFS, and how to utilise parallel processing with PySpark. All services are initialised as Docker containers.
+
+\subsection*{\href{https://www.yygarchive.org/}{yygarchive.org}}
+
+Flask site to search for games of a shutdown games portal. Games were procured from an existing WARC collection, replayed with pywb to subsequently be scraped using requests and Beautiful Soup.
 
 \subsection*{\href{https://matthewbarber.io/gzip-quine/}{Recursive GZIP Bomb Tutorial}}
 
-Comprehensive primer on the file format and compression algorithm theory involved in creating compressed file quines (i.e. extracts to an exact copy of itself, ad infinitum). Self-referential checksum was brute-forced by a multiprocessing \tech{Python} script. The resulting file is used to smoke test Apache's Tika project, and exposed a macOS vulnerability.
-
-\section*{EXPERIENCE}
-
-\fakesubsection{Ferndale Homeless Shelter} \hfill \textit{Nov 2015—Apr 2019}\\
-\fakesubsection{Starbucks} \hfill  \textit{Sep 2018—Feb 2019}\\
-\fakesubsection{OTS Homeless Shelter} \hfill \textit{Sep 2018—Feb 2019}\\
-\fakesubsection{Adventure Island Theme Park} \hfill \textit{Jul 2017—Sep 2018}
+Comprehensive primer on the file format and compression algorithm theory involved in creating compressed file quines (i.e. extracts to an exact copy of itself, ad infinitum). Self-referential checksum was brute-forced by a multiprocessing Python script.
 
 \section*{EDUCATION}
 
-1st (Honours) BSc Computer Science, Aston University
+\fakesubsection{Aston University} \hfill {\small\textit{Sep. 2016—July 2020}}
+
+1st (Honours) BSc Computer Science
 
 \end{document}
