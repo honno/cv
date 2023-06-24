@@ -1,0 +1,21 @@
+name: Build PDF
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install fonts
+      run: mv fonts/* /usr/share/fonts/
+    - name: Install latex things
+      run: sudo apt-get install texlive-xetex texlive-fonts-extra
+    - name: Build CV
+      run: xelatex -interaction=nonstopmode matthew-barber-cv.tex
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: CV
+        path: matthew-barber-cv.pdf
