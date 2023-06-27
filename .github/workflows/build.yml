@@ -13,9 +13,9 @@ jobs:
     - name: Install latex things
       run: sudo apt-get install texlive-xetex texlive-fonts-extra
     - name: Build CV
-      run: xelatex -interaction=nonstopmode matthew-barber-cv.tex
+      run: xelatex -interaction=nonstopmode MatthewBarberCV.tex
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
         name: CV
-        path: matthew-barber-cv.pdf
+        path: MatthewBarberCV.pdf
