@@ -47,7 +47,7 @@
 \newfontfamily\subsectionfont[Color=primary]{Roboto Slab-Bold}
 \titleformat*{\section}{\LARGE\sectionfontlite}
 \titleformat*{\subsection}{\large\subsectionfont}
-\newcommand{\fakesubsection}[1]{\large{\subsectionfont{#1}}}
+\newcommand{\datedsubsection}[2]{{\large\subsectionfont{#1}} \hfill {\scriptsize\textit{#2}}}
 \titlespacing*{\section}{0pt}{6pt}{0pt}
 \titlespacing*{\subsection}{0pt}{3pt}{0pt}
 
@@ -141,7 +141,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisl nulla, tinci
 
 \section*{EXPERIENCE}
 
-\fakesubsection{Software Engineer @ \href{https://www.quansight.com/}{Quansight}} \hfill {\scriptsize\textit{July 2021—}}
+\datedsubsection{Software Engineer @ \href{https://www.quansight.com/}{Quansight}}{July 2021—}
 
  In id interdum turpis. Pellentesque gravida tincidunt euismod. Etiam rutrum tristique purus, vitae congue mauris ullamcorper quis. Duis rutrum lorem sit amet diam vehicula tempor. In rhoncus efficitur quam, non tempus libero fringilla id.
 
@@ -151,25 +151,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisl nulla, tinci
 
 Suspendisse rutrum tempor sagittis. Etiam nec porttitor felis. Cras porttitor scelerisque tempus. Quisque rutrum sagittis nisi, quis aliquam massa luctus vel.
 
-\subsection*{\href{https://github.com/data-apis/dataframe-interchange-tests/}{dataframe-interchange-tests}}
+\subsection*{\href{https://github.com/data-apis/dataframe-interchange-tests/}{dataframe-interchange-tests} \& \href{https://github.com/data-apis/array-api-tests/}{array-api-tests}}
 
  Donec ultrices, ligula ac condimentum facilisis, odio urna interdum tellus, faucibus mattis nunc eros vel neque.
 
-\subsection*{\href{https://github.com/data-apis/array-api-tests/}{array-api-tests}}
-
- Etiam pellentesque non ante et congue. Vivamus posuere ut libero at maximus.
-
-%\subsection*{\href{https://www.yygarchive.org/}{yygarchive.org}}
-%
-%Flask site to search for games of a shutdown games portal. Games were procured from an existing WARC collection, replayed with pywb to subsequently be scraped using requests and Beautiful Soup.
-%
-%\subsection*{\href{https://honno.dev/gzip-quine/}{Recursive GZIP Bomb Tutorial}}
-%
-%Comprehensive primer on the file format and compression algorithm theory involved in creating compressed file quines (i.e. extracts to an exact copy of itself, ad infinitum). Self-referential checksum was brute-forced by a multiprocessing Python script.
-
 \section*{EDUCATION}
 
-\fakesubsection{Aston University} \hfill {\scriptsize\textit{Sep. 2016—July 2020}}
+\datedsubsection{Aston University}{Sep. 2016—July 2020}
 
 1st (Honours) BSc Computer Science
 
