@@ -51,6 +51,7 @@
 \titlespacing*{\section}{0pt}{6pt}{0pt}
 \titlespacing*{\subsection}{0pt}{3pt}{0pt}
 
+
 \newfontfamily{\annfont}[Color=secondary]{Roboto}
 \newfontfamily\marginemph[Color=secondary]{Roboto Condensed}
 \newcommand{\annotate}[1]{
@@ -62,6 +63,11 @@
 }
 
 \usepackage{enumitem}
+\newcommand{\listhighlights}[1]{
+	\begin{itemize}[topsep=0pt, nosep, leftmargin=12pt]
+		#1
+	\end{itemize}
+}
 \newcommand{\listskills}[2]{
 	\textbf{\marginemph #1}
 	\begin{description}[topsep=0pt, noitemsep, labelsep=0pt]
@@ -80,12 +86,12 @@
 {\titlefont Matthew Barber}
 
 \begin{tabularx}{\textwidth}{ @{} l c r @{} }
-	\faGlobe{} Southend-on-Sea, UK &
+	\faGlobe{} Southend-on-Sea, Essex, UK &
 	%\faPhone{} 07951 415676 &
 	\faEnvelope{} \href{mailto:quitesimplymatt@gmail.com}{quitesimplymatt@gmail.com}
 \end{tabularx}
 
-\section*{PROFILE}
+\section*{EXPERIENCE}
 
 \annotate{
 	\textbf{\marginemph FIND ME ONLINE}
@@ -129,31 +135,48 @@
 	\medskip
 
 	\listskills{TOOLS}{
+		\item pytest
 		\item git
 		\item GitHub Actions
-		\item pytest
 		\item Jupyter Notebook
 		\item Linux
 	}
 }
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisl nulla, tincidunt id justo et, ornare lobortis turpis. In pellentesque erat vitae turpis venenatis, eget blandit ligula tempus. Nunc aliquet condimentum velit, quis dapibus magna tristique ut.
-
-\section*{EXPERIENCE}
-
 \datedsubsection{Software Engineer @ \href{https://www.quansight.com/}{Quansight}}{July 2021—}
 
- In id interdum turpis. Pellentesque gravida tincidunt euismod. Etiam rutrum tristique purus, vitae congue mauris ullamcorper quis. Duis rutrum lorem sit amet diam vehicula tempor. In rhoncus efficitur quam, non tempus libero fringilla id.
+\listhighlights{
+	\item Helped design API standards as a member of the Python Data APIs consortium, which are now adopted by popular array and dataframe libraries such as NumPy and pandas.
+	\item Improved adoption of such standards by writing automated test suites that checked API implementations were standard compliant. Library authors have also found dozens of bugs in their core software offering thanks to the utilisation of property-based testing.
+	\item Transitioned a client's ETL pipeline to Dagster (a data orchestration platform for Python). I conducted a months-long refactor of their codebase, which was  necessary to fully take advantage of Dagster's powerful pipeline monitoring and debug tools going forward, as well as making the codebase easier to maintain.
+	\item Responsible for instilling a testing culture in a client's data pipelines team. I encouraged personnel to write tests and CI infrastructure by writing guides, running tutorials and pair programming.
+	\item Contributed NumPy compatibility layers to PyTorch as part of a contract with Meta. Such layers enable scientific code originally built for NumPy to now take advantage of PyTorch tensors and ops.
+}
 
 \section*{PROJECTS}
 
 \subsection*{\href{https://github.com/HypothesisWorks/hypothesis/}{Hypothesis}}
 
-Suspendisse rutrum tempor sagittis. Etiam nec porttitor felis. Cras porttitor scelerisque tempus. Quisque rutrum sagittis nisi, quis aliquam massa luctus vel.
+Popular property-based testing library for Python that I help maintain.
+
+\listhighlights{
+	\item Contributed array API tools that are now used in the test suites of libraries such as NumPy and PyTorch.
+	\item Regularly assist with triaging issues and PRs.
+}
 
 \subsection*{\href{https://github.com/data-apis/dataframe-interchange-tests/}{dataframe-interchange-tests} \& \href{https://github.com/data-apis/array-api-tests/}{array-api-tests}}
 
- Donec ultrices, ligula ac condimentum facilisis, odio urna interdum tellus, faucibus mattis nunc eros vel neque.
+Compliance test suites for the dataframe interchange protocol and array API standards respectively.
+
+\listhighlights{
+	\item Employed property-based testing to generate many varied and interesting test cases to say with a high degree of confidence whether an implemented API is compliant or not.
+	\item Architected library-agnostic tests so that the test suites can run against any implementation of a standard.
+}
+
+\section*{PUBLICATIONS}
+
+\href{https://conference.scipy.org/proceedings/scipy2023/aaron_meurer.html}{Consortium for Python Data API
+	Standards, "Python Array API Standard: Toward Array Interoperability in the Scientific Python Ecosystem", 2023.}
 
 \section*{EDUCATION}
 
