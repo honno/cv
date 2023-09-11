@@ -1,7 +1,7 @@
 % !TeX program = xelatex
 \title{Matthew Barber}
-\author{}
-\date{}
+\author{Matthew Barber}
+\date{\today}
 
 \documentclass[11pt]{article}
 
@@ -47,9 +47,10 @@
 \newfontfamily\subsectionfont[Color=primary]{Roboto Slab-Bold}
 \titleformat*{\section}{\LARGE\sectionfontlite}
 \titleformat*{\subsection}{\large\subsectionfont}
-\newcommand{\fakesubsection}[1]{\large{\subsectionfont{#1}}}
+\newcommand{\datedsubsection}[2]{{\large\subsectionfont{#1}} \hfill {\scriptsize\textit{#2}}}
 \titlespacing*{\section}{0pt}{6pt}{0pt}
 \titlespacing*{\subsection}{0pt}{3pt}{0pt}
+
 
 \newfontfamily{\annfont}[Color=secondary]{Roboto}
 \newfontfamily\marginemph[Color=secondary]{Roboto Condensed}
@@ -62,6 +63,11 @@
 }
 
 \usepackage{enumitem}
+\newcommand{\listhighlights}[1]{
+	\begin{itemize}[topsep=0pt, nosep, leftmargin=12pt]
+		#1
+	\end{itemize}
+}
 \newcommand{\listskills}[2]{
 	\textbf{\marginemph #1}
 	\begin{description}[topsep=0pt, noitemsep, labelsep=0pt]
@@ -75,34 +81,52 @@
 
 \begin{document}
 \thispagestyle{empty} % removes page number
+\raggedright
 \color{primary}
 
 {\titlefont Matthew Barber}
 
 \begin{tabularx}{\textwidth}{ @{} l c r @{} }
-	\faGlobe{} Essex, UK &
+	\faGlobe{} Southend-on-Sea, Essex, UK &
 	%\faPhone{} 07951 415676 &
 	\faEnvelope{} \href{mailto:quitesimplymatt@gmail.com}{quitesimplymatt@gmail.com}
 \end{tabularx}
 
-\section*{PROFILE}
+\section*{EXPERIENCE}
 
 \annotate{
 	\textbf{\marginemph FIND ME ONLINE}
 	\begin{description}[labelsep=1pt]
 		\item \icon{github} \href{https://github.com/honno/}{github.com/honno}
+		\item \icon{jekyll} \href{https://blog.honno.dev/}{blog.honno.dev}
 		\item \icon{linkedin} \href{https://www.linkedin.com/in/honno/}{linkedin.com/in/honno}
 	\end{description}
-}
 
-I'm a BSc Computer Science graduate experienced in using Python for data mining applications. I can efficiently explore, preprocess and model for data to identify the underlying patterns which lead to useful insights. I can develop quick scripts and notebooks to fully-fledged CLIs and websites. I can work efficiently alone, being a disciplined and resourceful individual, always eager to improve my craft. With my employment and volunteering experiences necessitating cohesive teamwork, I enjoy working with and learning from my peers, and can communicate my own ideas succinctly.
+	\smallskip
 
-\section*{EXPERIENCE}
+	\listskills{OSS CONTRIBUTIONS}{
+		\item NumPy
+		\item PyTorch
+		\item CuPy
+		\item JAX
+		\item pandas
+		\item PyArrow
+		\item polars
+		\item Vaex
+		\item cuDF
+		\item modin
+		\item OpenBLAS
+		\item Hypothesis
+		\item pandera
+		\item Rich
+	}
 
-\annotate{
+	\medskip
+
 	\listskills{LANGUAGES}{
 		\item Python
-		\item C
+		\item Java
+		\item C\#
 		\item SQL
 		\item JavaScript
 		\item Bash
@@ -111,70 +135,52 @@ I'm a BSc Computer Science graduate experienced in using Python for data mining 
 
 	\medskip
 
-	\listskills{PACKAGES}{
-		\item pandas
-		\item NumPy
-		\item SciPy
-		\item pytest
-		\item Hypothesis
-		\item Sphinx
-		\item Matplotlib
-		\item Altair
-		\item Rich
-		\item Click
-		\item Requests
-		\item Flask
-		\item Django
-		\item Beautiful Soup
-		\item pywb
-	}
-
-	\medskip
-
 	\listskills{TOOLS}{
-		\item Git
-		\item Jupyter
-		\item pre-commit
+		\item pytest
+		\item git
 		\item GitHub Actions
-		\item Docker
+		\item Jupyter Notebook
+		\item Linux
 	}
 }
 
+\datedsubsection{Software Engineer @ \href{https://www.quansight.com/}{Quansight}}{July 2021—}
 
-\fakesubsection{\href{https://www.quansight.com/}{Quansight OSS Intern}} \hfill {\small\textit{July—Sep. 2021}}
-
-Creating tools for developers and users of Python array libraries such as NumPy to test their adoption of the upcoming Array API standard. Involves using property-based techniques to find non-obvious bugs, where my work is now being merged into the popular Hypothesis library for first-party support and will be used by the official Array API compliance suite.
-
-%\fakesubsection{Ferndale Homeless Shelter Volunteer} \hfill {\small\textit{Nov. 2015—April 2019}}\\
-%\fakesubsection{Starbucks Barista} \hfill  {\small\textit{Sep. 2018—Feb. 2019}}\\
-%\fakesubsection{OTS Homeless Shelter Volunteer} {\small\hfill \textit{Sep. 2018—Feb. 2019}}\\
-%\fakesubsection{Adventure Island Theme Park Host} {\small\hfill \textit{July 2017—Sep. 2018}}
+\listhighlights{
+	\item Helped design API standards as a member of the Python Data APIs consortium, which are now adopted by popular array and dataframe libraries such as NumPy and pandas.
+	\item Improved adoption of such standards by writing automated test suites that checked API implementations were standard compliant. Library authors have also found dozens of bugs in their core software offering thanks to the utilisation of property-based testing.
+	\item Transitioned a client's ETL pipeline to Dagster (a data orchestration platform for Python). I conducted a months-long refactor of their codebase, which was  necessary to fully take advantage of Dagster's powerful pipeline monitoring and debug tools going forward, as well as making the codebase easier to maintain.
+	\item Responsible for instilling a testing culture in a client's data pipelines team. I encouraged personnel to write tests and CI infrastructure by writing guides, running tutorials and pair programming.
+	\item Contributed NumPy compatibility layers to PyTorch as part of a contract with Meta. Such layers enable scientific code originally built for NumPy to now take advantage of PyTorch tensors and ops.
+}
 
 \section*{PROJECTS}
 
-\subsection*{\href{https://github.com/honno/coinflip/}{coinflip}}
+\subsection*{\href{https://github.com/HypothesisWorks/hypothesis/}{Hypothesis}}
 
-Python library for assuring cryptographic randomness in RNGs. The implemented statistical tests use pandas under the hood. A testing suite featuring pytest and Hypothesis ensures reliable results.
+Popular property-based testing library for Python that I help maintain.
 
-\subsection*{\href{https://github.com/honno/epitope-classification}{Linear B-cell Epitope Classification}}
+\listhighlights{
+	\item Contributed array API tools that are now used in the test suites of libraries such as NumPy and PyTorch.
+	\item Regularly assist with triaging issues and PRs.
+}
 
-Essay on exploring, preprocessing and modelling for a dirty proteins dataset. Subtle duplication patterns  were identified, resolved via a bespoke Python script. Weka was used to create various classifiers to find the most appropriate model for both equal and uneven cost scenarios.
+\subsection*{\href{https://github.com/data-apis/dataframe-interchange-tests/}{dataframe-interchange-tests} \& \href{https://github.com/data-apis/array-api-tests/}{array-api-tests}}
 
-%\subsection*{\href{https://github.com/Joshgallagher/financial-analysis-stack}{Financial Analysis Stack}}
-%
-%Creating regression models for stock market histories in Python. Demonstrates how to build applications with distributed data via Hive on HDFS, and how to utilise parallel processing with PySpark. All services are initialised as Docker containers.
+Compliance test suites for the dataframe interchange protocol and array API standards respectively.
 
-\subsection*{\href{https://www.yygarchive.org/}{yygarchive.org}}
+\listhighlights{
+	\item Employed property-based testing to generate many varied and interesting test cases to say with a high degree of confidence whether an implemented API is compliant or not.
+	\item Architected library-agnostic tests so that the test suites can run against any implementation of a standard.
+}
 
-Flask site to search for games of a shutdown games portal. Games were procured from an existing WARC collection, replayed with pywb to subsequently be scraped using requests and Beautiful Soup.
+\section*{PUBLICATIONS}
 
-\subsection*{\href{https://honno.dev/gzip-quine/}{Recursive GZIP Bomb Tutorial}}
-
-Comprehensive primer on the file format and compression algorithm theory involved in creating compressed file quines (i.e. extracts to an exact copy of itself, ad infinitum). Self-referential checksum was brute-forced by a multiprocessing Python script.
+\href{https://conference.scipy.org/proceedings/scipy2023/aaron_meurer.html}{Consortium for Data API Standards, "Python Array API Standard: Toward Array Interoperability in the Scientific Ecosystem", 2023.}
 
 \section*{EDUCATION}
 
-\fakesubsection{Aston University} \hfill {\small\textit{Sep. 2016—July 2020}}
+\datedsubsection{Aston University}{Sep. 2016—July 2020}
 
 1st (Honours) BSc Computer Science
 

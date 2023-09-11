@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.2.2 (1:1.2.2+202305151914+b0a8486541), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'linkedin.pdf' (pdf, eps, ps)
+%% Accompanies image file 'jekyll.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{167.67750549bp}%
+    \setlength{\unitlength}{307.50059509bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,9 +50,9 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.99998526)%
+  \begin{picture}(1,1)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{linkedin.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{jekyll.pdf}}%
   \end{picture}%
 \endgroup%
