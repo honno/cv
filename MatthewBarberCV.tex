@@ -64,7 +64,8 @@
 
 \usepackage{enumitem}
 \newcommand{\listhighlights}[1]{
-	\begin{itemize}[topsep=0pt, nosep, leftmargin=12pt]
+	%\smallskip{}
+	\begin{itemize}[topsep=2pt, partopsep=0pt, itemsep=2pt, parsep=0pt, leftmargin=12pt]
 		#1
 	\end{itemize}
 }
@@ -149,7 +150,7 @@
 \listhighlights{
 	\item Helped design API standards as a member of the Python Data APIs consortium, which are now adopted by popular array and dataframe libraries such as NumPy and pandas.
 	\item Improved adoption of such standards by writing automated test suites that checked API implementations were standard compliant. Library authors have also found dozens of bugs in their core software offering thanks to the utilisation of property-based testing.
-	\item Transitioned a client's ETL pipeline to Dagster (a data orchestration platform for Python). I conducted a months-long refactor of their codebase, which was  necessary to fully take advantage of Dagster's powerful pipeline monitoring and debug tools going forward, as well as making the codebase easier to maintain.
+	\item Transitioned a client's ETL pipeline to Dagster (a data orchestration platform for Python). I conducted a refactor of their codebase and made deep structural improvements, which was  necessary to fully take advantage of Dagster's powerful pipeline monitoring and debug tools going forward, as well as making the codebase easier to maintain.
 	\item Responsible for instilling a testing culture in a client's data pipelines team. I encouraged personnel to write tests and CI infrastructure by writing guides, running tutorials and pair programming.
 	\item Contributed NumPy compatibility layers to PyTorch as part of a contract with Meta. Such layers enable scientific code originally built for NumPy to now take advantage of PyTorch tensors and ops.
 }
@@ -176,7 +177,7 @@ Compliance test suites for the dataframe interchange protocol and array API stan
 
 \section*{PUBLICATIONS}
 
-\href{https://conference.scipy.org/proceedings/scipy2023/aaron_meurer.html}{Consortium for Data API Standards, "Python Array API Standard: Toward Array Interoperability in the Scientific Ecosystem", 2023.}
+\href{https://conference.scipy.org/proceedings/scipy2023/aaron_meurer.html}{Consortium for Data API Standards, 'Python Array API Standard: Toward Array Interoperability in the Scientific Python Ecosystem', in \textit{Proceedings of the 22nd Python in Science Conference}, 2023, pp. 8–17.}
 
 \section*{EDUCATION}
 
