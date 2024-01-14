@@ -149,8 +149,10 @@
 
 \listhighlights{
 	\item Helped design API standards as a member of the Python Data APIs consortium, which are now adopted by popular array and dataframe libraries such as NumPy and pandas.
-	\item Improved adoption of such standards by writing automated test suites that checked API implementations were standard compliant. Library authors have also found dozens of bugs in their core software offering thanks to the utilisation of property-based testing.
-	\item Transitioned a client's ETL pipeline to Dagster (a data orchestration platform for Python). I conducted a refactor of their codebase and made deep structural improvements, which was  necessary to fully take advantage of Dagster's powerful pipeline monitoring and debug tools going forward, as well as making the codebase easier to maintain.
+	\item Built a REST API backend for a client's image detection platform, using FastAPI and various other libraries that modelled, queried and migrated a postgres database.
+	\item Transitioned a client’s ETL pipeline to the Dagster data orchestration
+	platform for Python, in which I conducted a refactor of their codebase and
+	made deep structural improvements.
 	\item Responsible for instilling a testing culture in a client's data pipelines team. I encouraged personnel to write tests and CI infrastructure by writing guides, running tutorials and pair programming.
 	\item Contributed NumPy compatibility layers to PyTorch as part of a contract with Meta. Such layers enable scientific code originally built for NumPy to now take advantage of PyTorch tensors and ops.
 }
@@ -163,7 +165,7 @@ Popular property-based testing library for Python that I help maintain.
 
 \listhighlights{
 	\item Contributed array API tools that are now used in the test suites of libraries such as NumPy and PyTorch.
-	\item Regularly assist with triaging issues and PRs.
+	\item Maintained modules used to test numerical/scientific code generally.
 }
 
 \subsection*{\href{https://github.com/data-apis/dataframe-interchange-tests/}{dataframe-interchange-tests} \& \href{https://github.com/data-apis/array-api-tests/}{array-api-tests}}
@@ -173,6 +175,7 @@ Compliance test suites for the dataframe interchange protocol and array API stan
 \listhighlights{
 	\item Employed property-based testing to generate many varied and interesting test cases to say with a high degree of confidence whether an implemented API is compliant or not.
 	\item Architected library-agnostic tests so that the test suites can run against any implementation of a standard.
+	\item Projects like NumPy and PyArrow have found dozens of bugs in their main libraries just by testing their API compatibility layers.
 }
 
 \section*{PUBLICATIONS}
