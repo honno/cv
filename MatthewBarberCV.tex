@@ -52,10 +52,11 @@
 \titlespacing*{\subsection}{0pt}{3pt}{0pt}
 
 
-\newfontfamily{\annfont}[Color=secondary]{Roboto}
-\newfontfamily\marginemph[Color=secondary]{Roboto Condensed}
+\newfontfamily\annfont[Color=secondary]{Roboto}
+\newfontfamily\annemphfont[Color=secondary]{Roboto Condensed-Bold}
+
 \newcommand{\annotate}[1]{
-	\marginpar{\small{\annfont#1}}
+	\marginpar{\small{#1}}
 }
 
 \newcommand{\icon}[1]{
@@ -70,7 +71,7 @@
 	\end{itemize}
 }
 \newcommand{\listskills}[2]{
-	\textbf{\marginemph #1}
+	\textbf{\annemphfont #1}
 	\begin{description}[topsep=0pt, noitemsep, labelsep=0pt]
 	#2
 	\end{description}
@@ -89,14 +90,13 @@
 
 \begin{tabularx}{\textwidth}{ @{} l c r @{} }
 	\faGlobe{} Southend-on-Sea, Essex, UK &
-	%\faPhone{} 07951 415676 &
 	\faEnvelope{} \href{mailto:quitesimplymatt@gmail.com}{quitesimplymatt@gmail.com}
 \end{tabularx}
 
 \section*{EXPERIENCE}
 
 \annotate{
-	\textbf{\marginemph FIND ME ONLINE}
+	\textbf{\annemphfont FIND ME ONLINE}
 	\begin{description}[labelsep=1pt]
 		\item \icon{github} \href{https://github.com/honno/}{github.com/honno}
 		\item \icon{jekyll} \href{https://blog.honno.dev/}{blog.honno.dev}
@@ -105,7 +105,7 @@
 
 	\smallskip
 
-	\listskills{OSS CONTRIBUTIONS}{
+	\listskills{OPEN SOURCE CONTRIBUTIONS}{
 		\item NumPy
 		\item PyTorch
 		\item CuPy
@@ -145,14 +145,20 @@
 	}
 }
 
-\datedsubsection{Software Engineer @ \href{https://www.quansight.com/}{Quansight}}{July 2021—}
+\datedsubsection{Software Engineer @ \href{https://www.palantir.com/uk/}{Palantir} (via \href{https://www.hexegic.com/}{Hexegic})}{May 2024—}
+
+\listhighlights{
+	\item Built and maintained PySpark data pipelines for NHS trusts across the country as a subcontractor for Palantir's UK Government team.
+	\item Setting up monitoring to ensure we know immediately when pipelines are failing, preventing downtime on critical user-facing applications.
+	\item Monthly on-call rotation to respond to pipeline issues, fixing myself and coordinating with other internal teams, or communicating outages where necessary.
+}
+
+\datedsubsection{Software Engineer @ \href{https://www.quansight.com/}{Quansight}}{July 2021—May 2024}
 
 \listhighlights{
 	\item Helped design API standards as a member of the Python Data APIs consortium, which are now adopted by popular array and dataframe libraries such as NumPy and pandas.
 	\item Built a REST API backend for a client's image detection platform, using FastAPI and various other libraries that modelled, queried and migrated a postgres database.
-	\item Transitioned a client’s ETL pipeline to the Dagster data orchestration
-	platform for Python, in which I conducted a refactor of their codebase and
-	made deep structural improvements.
+%	\item Transitioned a client’s ETL pipeline to the Dagster data orchestration platform for Python, in which I conducted a refactor of their codebase and made deep structural improvements.
 	\item Responsible for instilling a testing culture in a client's data pipelines team. I encouraged personnel to write tests and CI infrastructure by writing guides, running tutorials and pair programming.
 	\item Contributed NumPy compatibility layers to PyTorch as part of a contract with Meta. Such layers enable scientific code originally built for NumPy to now take advantage of PyTorch tensors and ops.
 }
@@ -178,14 +184,16 @@ Compliance test suites for the dataframe interchange protocol and array API stan
 	\item Projects like NumPy and PyArrow have found dozens of bugs in their main libraries just by testing their API compatibility layers.
 }
 
+\iffalse
 \section*{PUBLICATIONS}
 
-\href{https://conference.scipy.org/proceedings/scipy2023/aaron_meurer.html}{Consortium for Data API Standards, 'Python Array API Standard: Toward Array Interoperability in the Scientific Python Ecosystem', in \textit{Proceedings of the 22nd Python in Science Conference}, 2023, pp. 8–17.}
+\href{https://proceedings.scipy.org/articles/gerudo-f2bc6f59-001}{Consortium for Data API Standards, `Python Array API Standard: Toward Array Interoperability in the Scientific Python Ecosystem', 2023}
+\fi
 
 \section*{EDUCATION}
 
 \datedsubsection{Aston University}{Sep. 2016—July 2020}
 
-1st (Honours) BSc Computer Science
+1st Honours BSc Computer Science
 
 \end{document}
