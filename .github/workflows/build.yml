@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Install fonts
       run: mv fonts/* /usr/share/fonts/
     - name: Install latex things
@@ -15,7 +15,7 @@ jobs:
     - name: Build CV
       run: xelatex -interaction=nonstopmode MatthewBarberCV.tex
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: CV
         path: MatthewBarberCV.pdf
@@ -31,12 +31,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
     - name: Download artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: CV
         path: MatthewBarberCV.pdf
     - name: Upload page artifact
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v3
       with:
         path: MatthewBarberCV.pdf
     - name: Deploy to GitHub Pages
