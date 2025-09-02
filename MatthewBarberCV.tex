@@ -45,12 +45,11 @@
 \newfontfamily\sectionfont[Color=primary]{Roboto Condensed}
 \newfontfamily\sectionfontlite[Color=primary]{Roboto Condensed-Light}
 \newfontfamily\subsectionfont[Color=primary]{Roboto Slab-Bold}
-\titleformat*{\section}{\LARGE\sectionfontlite}
+\titleformat*{\section}{\LARGE\sectionfontlite\uppercase}
 \titleformat*{\subsection}{\large\subsectionfont}
 \newcommand{\datedsubsection}[2]{{\large\subsectionfont{#1}} \hfill {\scriptsize\textit{#2}}}
 \titlespacing*{\section}{0pt}{6pt}{0pt}
 \titlespacing*{\subsection}{0pt}{3pt}{0pt}
-
 
 \newfontfamily\annfont[Color=secondary]{Roboto}
 \newfontfamily\annemphfont[Color=secondary]{Roboto Condensed-Bold}
@@ -71,7 +70,7 @@
 	\end{itemize}
 }
 \newcommand{\listskills}[2]{
-	\textbf{\annemphfont #1}
+	\textbf{\annemphfont \uppercase{#1}}
 	\begin{description}[topsep=0pt, noitemsep, labelsep=0pt]
 	#2
 	\end{description}
@@ -90,13 +89,14 @@
 
 \begin{tabularx}{\textwidth}{ @{} l c r @{} }
 	\faGlobe{} Southend-on-Sea, Essex, UK &
-	\faEnvelope{} \href{mailto:quitesimplymatt@gmail.com}{quitesimplymatt@gmail.com}
+	\faEnvelope{} \href{mailto:quitesimplymatt@gmail.com}{quitesimplymatt@gmail.com} % &
+	% \faPhone{}
 \end{tabularx}
 
-\section*{EXPERIENCE}
+\section*{Experience}
 
 \annotate{
-	\textbf{\annemphfont FIND ME ONLINE}
+	\textbf{\annemphfont \uppercase{Find me online}}
 	\begin{description}[labelsep=1pt]
 		\item \icon{github} \href{https://github.com/honno/}{github.com/honno}
 		\item \icon{linkedin} \href{https://www.linkedin.com/in/honno/}{linkedin.com/in/honno}
@@ -104,7 +104,7 @@
 
 	\smallskip
 
-	\listskills{OPEN SOURCE CONTRIBUTIONS}{
+	\listskills{Open source contributions}{
 		\item NumPy
 		\item PyTorch
 		\item CuPy
@@ -123,7 +123,7 @@
 
 	\medskip
 
-	\listskills{LANGUAGES}{
+	\listskills{Languages}{
 		\item Python
 		\item Java
 		\item C\#
@@ -135,8 +135,7 @@
 
 	\medskip
 
-	\listskills{TOOLS}{
-		\item pytest
+	\listskills{Tools}{
 		\item git
 		\item GitHub Actions
 		\item Jupyter Notebook
@@ -144,34 +143,34 @@
 	}
 }
 
-\datedsubsection{Data Pipeline Engineer @ \href{https://www.palantir.com/uk/}{Palantir} (via \href{https://www.hexegic.com/}{Hexegic})}{May 2024—}
+\datedsubsection{Forward Deployed Software Engineer @ \href{https://www.palantir.com/uk/}{Palantir}}{May 2024—}
 
 \listhighlights{
-	\item Built and maintained PySpark data pipelines for local government agencies across the country as a subcontractor for Palantir.
-	\item Set up monitoring to ensure we know immediately when pipelines are failing, preventing downtime on critical user-facing applications.
-	\item Fixed issues reported by customers, often having to quickly learn code, pipelines and user interfaces written by others to resolve problems under tight SLAs.
-	\item Monthly on-call rotation to respond to pipeline failures, either fixing them myself or coordinating with other teams.
+	\item Built PySpark data pipelines for NHS trusts nationwide as a subcontractor for Palantir (via \href{https://www.hexegic.com/}{Hexegic}).
+	\item Set up monitoring to catch pipeline failures instantly, preventing downtime on critical medical applications.
+	\item Resolved customer issues under tight SLAs, often learning unfamiliar codebases on the fly.
+	\item Monthly on-call rotation to fix or coordinate responses to pipeline failures.
 }
 
 \datedsubsection{Software Engineer @ \href{https://www.quansight.com/}{Quansight}}{July 2021—May 2024}
 
 \listhighlights{
-	\item Helped design API standards as a member of the Python Data APIs consortium, which are now adopted by popular array and dataframe libraries such as NumPy and pandas.
+	\item Co-designed API standards as a member of the Python Data APIs consortium, which are now adopted by popular array and dataframe libraries such as NumPy and pandas.
 	\item Built a REST API backend for a client's image detection platform, using FastAPI and various other libraries that modelled, queried and migrated a postgres database.
 %	\item Transitioned a client’s ETL pipeline to the Dagster data orchestration platform for Python, in which I conducted a refactor of their codebase and made deep structural improvements.
-	\item Instilled a testing culture in a client's data pipelines team. I encouraged personnel to write tests and CI infrastructure by writing guides, running tutorials and pair programming.
-	\item Contributed NumPy compatibility layers to PyTorch as part of a contract with Meta. Such layers enable scientific code originally built for NumPy to now take advantage of PyTorch tensors and ops.
+	\item Instilled an engineering culture in a client’s data science team by running tutorials and pair programming on testing and CI.
+	\item Contributed compatibility layers to PyTorch as part of a contract with Meta that enabled existing NumPy code to run on PyTorch.
 }
 
-\section*{PROJECTS}
+\section*{Projects}
 
 \subsection*{\href{https://github.com/HypothesisWorks/hypothesis/}{Hypothesis}}
 
 Popular property-based testing library for Python that I help maintain.
 
 \listhighlights{
-	\item Contributed array API tools that are now used in the test suites of libraries such as NumPy and PyTorch.
-	\item Maintained modules used to test numerical/scientific code generally.
+	\item Built array API tools now used in the test suites of libraries such as NumPy and PyTorch.
+	\item Enhanced numerical modules by fixing bugs and adding new features.
 }
 
 \subsection*{\href{https://github.com/data-apis/array-api-tests/}{array-api-tests} \& \href{https://github.com/data-apis/dataframe-interchange-tests/}{dataframe-interchange-tests}}
@@ -179,18 +178,16 @@ Popular property-based testing library for Python that I help maintain.
 Compliance test suites for the array API and dataframe interchange standards adopted by Python's scientific ecosystem.
 
 \listhighlights{
-	\item Employed property-based testing to generate many varied and interesting test cases to say with a high degree of confidence whether an implemented API is compliant or not.
-	\item Architected library-agnostic tests so that the test suites can run against any implementation of a standard.
-	\item Projects like NumPy and PyArrow have found dozens of bugs in their main libraries just by testing their API compatibility layers.
+	\item Applied property-based testing to generate diverse test cases to verify API compliance with high confidence.
+%	\item Architected library-agnostic tests so that the test suites can run against any implementation of a standard.
+	\item Helped projects like NumPy and PyArrow uncover dozens of internal bugs solely through compatibility testing.
 }
 
-\iffalse
-\section*{PUBLICATIONS}
+\section*{Publications}
 
 \href{https://proceedings.scipy.org/articles/gerudo-f2bc6f59-001}{Consortium for Data API Standards, `Python Array API Standard: Toward Array Interoperability in the Scientific Python Ecosystem', 2023}
-\fi
 
-\section*{EDUCATION}
+\section*{Education}
 
 \datedsubsection{Aston University}{Sep. 2016—July 2020}
 
