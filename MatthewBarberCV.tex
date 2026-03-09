@@ -1,0 +1,221 @@
+% !TeX program = xelatex
+\title{Matthew Barber's CV}
+\author{Matthew Barber}
+\date{\today}
+
+\documentclass[11pt]{article}
+
+% prevent hyphen breaks
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{graphicx}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={120mm,257mm},
+	left=20mm,
+	top=20mm,
+	% 50mm to play
+	marginparsep=10mm,
+	marginparwidth=50mm % overflow
+}
+
+\setlength{\parindent}{0in}
+
+\usepackage{color}
+\usepackage{xcolor}
+
+% Material Design colours:
+\colorlet{primary}{black!87!white}   % - high emphasis
+\colorlet{secondary}{black!60!white} % - med emphasis
+\colorlet{tertiary}{black!38!white}  % - disabled
+
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{fontspec}
+
+\linespread{1}
+
+\newfontfamily\titlefont[Color=primary, Scale=3.75]{Merriweather}
+\setmainfont{Roboto}[ItalicFont={RobotoItalic}]
+\newfontfamily\sectionfontlite[Color=primary]{Roboto Condensed-Light}
+\newfontfamily\subsectionfont[Color=primary]{Roboto Slab-Bold}
+\titleformat*{\section}{\LARGE\sectionfontlite\uppercase}
+\titleformat*{\subsection}{\large\subsectionfont}
+\newcommand{\datedsubsection}[2]{\subsection*{#1 \hfill \textnormal{\scriptsize\textit{#2}}}}
+\titlespacing*{\section}{0pt}{3pt}{-2pt}
+\titlespacing*{\subsection}{0pt}{3pt}{2pt}
+
+\newfontfamily\annfont[Color=secondary]{Roboto}
+\newfontfamily\annemphfont[Color=secondary]{Roboto Condensed-Bold}
+
+\newcommand{\annotate}[1]{
+	\marginpar{\small{#1}}
+}
+
+\newcommand{\infoicon}[2][0]{
+	\raisebox{#1}{\def\svgwidth{1em}\input{#2.pdf_tex}}
+}
+\newcommand{\webicon}[1]{
+	\raisebox{-3pt}{\def\svgwidth{12pt}\input{#1.pdf_tex}}
+}
+
+\usepackage{enumitem}
+\newcommand{\listhighlights}[1]{
+	%\smallskip{}
+	\begin{itemize}[topsep=2pt, partopsep=0pt, itemsep=2pt, parsep=0pt, leftmargin=12pt]
+		#1
+	\end{itemize}
+}
+\newcommand{\listskills}[2]{
+	{\annemphfont \uppercase{#1}}
+	\begin{description}[topsep=0pt, noitemsep, labelsep=0pt]
+	#2
+	\end{description}
+}
+
+\usepackage{tabularx}
+
+\def\myphonenumber{}
+\InputIfFileExists{phone.tex}{}{}
+
+\begin{document}
+\thispagestyle{empty} % removes page number
+\raggedright
+\color{primary}
+
+{\titlefont Matthew Barber}
+
+\newcommand{\contactrow}{%
+	\infoicon[-0.1em]{location}Southend-on-Sea, Essex, UK &
+	\infoicon[-0.2em]{email}\hspace{2pt}\href{mailto:quitesimplymatt@gmail.com}{quitesimplymatt@gmail.com}%
+}
+
+\ifx\myphonenumber\empty
+	\begin{tabularx}{\textwidth}{ @{} l r @{} }
+		\contactrow
+	\end{tabularx}
+\else
+	\begin{tabularx}{\textwidth}{ @{} l c r @{} }
+		\contactrow &
+		\infoicon[-0.1em]{mobile}\hspace{1pt}\myphonenumber
+	\end{tabularx}
+\fi
+
+\section*{Experience}
+
+\annotate{
+	{\annemphfont \uppercase{Find me online}}
+	\begin{description}[labelsep=1pt]
+		\item \webicon{github} \href{https://github.com/honno/}{github.com/honno}
+		\item \webicon{linkedin} \href{https://www.linkedin.com/in/honno/}{linkedin.com/in/honno}
+	\end{description}
+
+	\smallskip
+
+	\listskills{Open source contributions}{
+		\item NumPy
+		\item PyTorch
+		\item CuPy
+		\item JAX
+		\item pandas
+		\item PyArrow
+		\item polars
+		\item Vaex
+		\item cuDF
+		\item modin
+		\item OpenBLAS
+		\item Hypothesis (maintainer)
+		\item pandera
+		\item Rich
+	}
+
+	\medskip
+
+	\listskills{Languages}{
+		\item Python
+		\item Java
+		\item C\#
+		\item SQL
+		\item JavaScript
+		\item Bash
+		\item Lisp
+	}
+
+	\medskip
+
+	\listskills{Tools}{
+		\item git
+		\item GitHub Actions
+		\item Jupyter Notebook
+		\item Linux
+		\item Claude Code
+	}
+}
+
+\datedsubsection{Forward Deployed Software Engineer @ \href{https://www.palantir.com/uk/}{Palantir}}{May 2024—}
+
+\listhighlights{
+	\item Built PySpark data pipelines for NHS trusts nationwide as a subcontractor for Palantir (via \href{https://www.hexegic.com/}{Hexegic}).
+	\item Engineered robust ingestion layers for heterogeneous and poorly-structured source data from legacy on-premise systems. % TODO
+	\item Designed observability with automated alerting, ensuring uptime and reliable data for critical medical services.
+	\item Managed production incidents during monthly on-call rotations, resolving complex pipeline failures under tight SLAs.
+	\item Mentored junior engineers on code quality and debugging, accelerating their transition to owning production systems.
+}
+
+\datedsubsection{Software Engineer @ \href{https://www.quansight.com/}{Quansight}}{July 2021—May 2024}
+
+\listhighlights{
+	\item Co-designed API standards as a member of the Python Data APIs consortium, which are now adopted by popular array and dataframe libraries such as NumPy and pandas.
+	\item Built a FastAPI backend for an ads OCR detection platform, covering data modelling, querying and schema migrations on PostgreSQL.
+	\item Upskilled a client’s data science team through workshops and pair programming, establishing a culture of automated testing.
+%    \item Migrated a client’s ETL pipeline to Dagster, refactoring the codebase for scalability and delivering lasting structural improvements.
+	\item Contributed compatibility layers to PyTorch as part of a contract with Meta, enabling NumPy code to run on GPUs.
+}
+
+\section*{Projects}
+
+\subsection*{\href{https://github.com/HypothesisWorks/hypothesis/}{Hypothesis}}
+
+Popular property-based testing library for Python.
+
+\listhighlights{
+	\item Built array API tools now used in the test suites of libraries such as NumPy and PyTorch.
+	\item Enhanced numerical/scientific modules in the library with bug fixes and new features.
+}
+
+\subsection*{\href{https://github.com/data-apis/array-api-tests/}{array-api-tests} \& \href{https://github.com/data-apis/dataframe-interchange-tests/}{dataframe-interchange-tests}}
+
+Compliance test suites for the array API and dataframe interchange standards adopted by Python's scientific ecosystem.
+
+\listhighlights{
+	\item Applied property-based testing to generate diverse test cases to verify API compliance with high confidence.
+	\item Helped projects like NumPy and PyArrow uncover dozens of internal bugs solely through compatibility testing.
+}
+
+%\subsection*{\href{https://github.com/honno/ascii-social-platform}{github.com/honno/ascii-social-platform}}
+%
+%Social media platform for sharing ASCII (text-based) art.
+%
+%\listhighlights{
+%	\item Developed a Django web app, implementing core social features including user authentication, follows, and likes.
+%	\item Designed PostgreSQL-backed data models and views to support content sharing, interactions, and scalable community engagement.
+%}
+
+\section*{Publications}
+
+\href{https://proceedings.scipy.org/articles/gerudo-f2bc6f59-001}{Consortium for Data API Standards, 'Python Array API Standard: Toward Array Interoperability in the Scientific Python Ecosystem', 2023}
+
+\section*{Education}
+
+\datedsubsection{Aston University}{Sep. 2016—July 2020}
+
+1st Honours BSc Computer Science
+
+\end{document}

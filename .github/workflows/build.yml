@@ -1,0 +1,47 @@
+name: Build PDF
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install fonts
+      run: mv fonts/* /usr/share/fonts/
+    - name: Install latex things
+      run: sudo apt-get install texlive-xetex texlive-fonts-extra
+    - name: Build CV
+      run: xelatex -interaction=nonstopmode MatthewBarberCV.tex && xelatex -interaction=nonstopmode MatthewBarberCV.tex
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: CV
+        path: MatthewBarberCV.pdf
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: CV
+        path: site
+    - name: Copy index
+      run: cp index.html site/
+    - name: Upload page artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: site
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v4
